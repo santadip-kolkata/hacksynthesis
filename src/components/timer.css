@@ -1,0 +1,187 @@
+.timer {
+  grid-area: timer;
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 22px 16px;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.timer:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.timer::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+
+.timer__launch {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.timer:hover .timer__launch {
+  color: var(--accent);
+}
+
+.timer__ring-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.timer__ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.timer__ring-track {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 3;
+}
+
+.timer__ring-progress {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: butt;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.timer__ring-tick {
+  fill: var(--signal);
+}
+
+.timer__core {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.timer__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--accent-2);
+}
+
+.timer__digits {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.timer__digits span {
+  color: var(--line-strong);
+  padding: 0 1px;
+}
+
+.timer__sub {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+
+.timer__controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.timer__btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  padding: 7px 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.timer__btn:hover {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.timer__btn.is-start {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--surface);
+}
+
+.timer__btn.is-start:hover {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+.timer__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.timer__set {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  border-top: 1px dashed var(--line-strong);
+  padding-top: 14px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.timer__set label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  gap: 4px;
+}
+
+.timer__set input {
+  width: 52px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 6px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.timer__set input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.timer__btn.is-apply {
+  background: var(--ink);
+  color: var(--surface);
+}

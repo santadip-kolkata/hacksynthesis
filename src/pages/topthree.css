@@ -1,0 +1,132 @@
+.results-page {
+  min-height: 100vh;
+}
+
+.results-hero {
+  padding: 72px 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.results-hero h1 {
+  font-size: clamp(44px, 8vw, 84px);
+  font-weight: 700;
+}
+
+.results-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  border: 1px solid var(--signal);
+  padding: 10px 16px;
+  background: #FFF3EF;
+}
+
+.results-status__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 0 4px rgba(255, 90, 54, 0.16);
+}
+
+.results-status span.mono {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #A8391F;
+}
+
+.results-podium {
+  padding: 64px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: end;
+}
+
+.results-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.results-slot__place {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+}
+
+.results-slot__plate {
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  border-top: 5px solid var(--line-strong);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 28px 16px;
+}
+
+.results-slot--gold .results-slot__plate {
+  height: 220px;
+  border-top-color: var(--gold);
+}
+
+.results-slot--silver .results-slot__plate {
+  height: 176px;
+  border-top-color: var(--silver);
+}
+
+.results-slot--bronze .results-slot__plate {
+  height: 150px;
+  border-top-color: var(--bronze);
+}
+
+.results-slot__icon {
+  font-size: 26px;
+  color: var(--line-strong);
+}
+
+.results-slot__pending {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+}
+
+.results-slot__team {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.results-back {
+  padding-bottom: 40px;
+}
+
+.results-back a {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--accent-2);
+}
+
+.results-back a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .results-podium {
+    grid-template-columns: 1fr;
+  }
+
+  .results-slot--gold .results-slot__plate,
+  .results-slot--silver .results-slot__plate,
+  .results-slot--bronze .results-slot__plate {
+    height: 130px;
+  }
+}
